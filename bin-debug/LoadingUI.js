@@ -62,7 +62,7 @@ var LoadingUI = (function (_super) {
         var e = 0.1;
         for (var i = 0; i < 10; i++) {
             var s_1 = new egret.Shape;
-            s_1.graphics.beginFill(0xffffff, e);
+            s_1.graphics.beginFill(0x7c736a, e);
             s_1.graphics.drawCircle(0, 0, 10);
             s_1.graphics.endFill();
             s_1.anchorOffsetX = -60;

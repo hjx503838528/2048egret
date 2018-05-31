@@ -273,14 +273,14 @@ var Game2048 = (function (_super) {
                                 var label = new eui.Label();
                                 label.text = "+" + num;
                                 label.x = 360;
-                                label.y = 75;
-                                label.width = 120;
+                                label.y = 140;
+                                label.width = 100;
                                 label.bold = true;
                                 label.size = 30;
                                 label.textColor = 0x7c736a;
                                 label.textAlign = "center";
                                 _this.addChild(label);
-                                egret.Tween.get(label).to({ y: 30 }, 300).to({ alpha: 0 }, 200).call(function (label) {
+                                egret.Tween.get(label).to({ y: 50 }, 300).to({ alpha: 0 }, 200).call(function (label) {
                                     _this.scoreTxt.text = "" + _this._grade;
                                     _this.removeFromParent(label);
                                 }, _this, [label]);
@@ -291,14 +291,14 @@ var Game2048 = (function (_super) {
                                     var bestLabel = new eui.Label();
                                     bestLabel.text = "+" + num_1;
                                     bestLabel.x = 490;
-                                    bestLabel.y = 75;
+                                    bestLabel.y = 100;
                                     bestLabel.size = 30;
                                     bestLabel.width = 120;
                                     bestLabel.bold = true;
                                     bestLabel.textColor = 0xf59563;
                                     bestLabel.textAlign = "center";
                                     _this.addChild(bestLabel);
-                                    egret.Tween.get(bestLabel).to({ y: 30 }, 300).to({ alpha: 0 }, 200).call(function (label) {
+                                    egret.Tween.get(bestLabel).to({ y: 50 }, 300).to({ alpha: 0 }, 200).call(function (label) {
                                         _this.bestTxt.text = "" + _this._best;
                                         _this.removeFromParent(label);
                                     }, _this, [label]);

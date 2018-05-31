@@ -286,14 +286,14 @@ class Game2048 extends eui.Component {
                                     let label: eui.Label = new eui.Label();
                                     label.text = `+${num}`;
                                     label.x = 360;
-                                    label.y = 75;
-                                    label.width = 120;
+                                    label.y = 140;
+                                    label.width = 100;
                                     label.bold = true;
                                     label.size = 30;
                                     label.textColor = 0x7c736a;
                                     label.textAlign = "center";
                                     this.addChild(label);
-                                    egret.Tween.get(label).to({ y: 30 }, 300).to({ alpha: 0 }, 200).call((label) => {
+                                    egret.Tween.get(label).to({ y: 50 }, 300).to({ alpha: 0 }, 200).call((label) => {
                                         this.scoreTxt.text = `${this._grade}`;
                                         this.removeFromParent(label);
                                     }, this, [label]);
@@ -304,14 +304,14 @@ class Game2048 extends eui.Component {
                                         let bestLabel: eui.Label = new eui.Label();
                                         bestLabel.text = `+${num}`;
                                         bestLabel.x = 490;
-                                        bestLabel.y = 75;
+                                        bestLabel.y = 100;
                                         bestLabel.size = 30;
                                         bestLabel.width = 120;
                                         bestLabel.bold = true;
                                         bestLabel.textColor = 0xf59563;
                                         bestLabel.textAlign = "center";
                                         this.addChild(bestLabel);
-                                        egret.Tween.get(bestLabel).to({ y: 30 }, 300).to({ alpha: 0 }, 200).call((label) => {
+                                        egret.Tween.get(bestLabel).to({ y: 50 }, 300).to({ alpha: 0 }, 200).call((label) => {
                                             this.bestTxt.text = `${this._best}`;
                                             this.removeFromParent(label);
                                         }, this, [label]);

@@ -44,60 +44,7 @@ var GridItem = (function (_super) {
         enumerable: true,
         configurable: true
     });
-    GridItem.prototype.moveTo = function (deltaX, deltaY, time, animateState) {
-        // animateState.increase();
-        egret.Tween.get(this).to({
-            x: this.x + deltaX,
-            y: this.y + deltaY
-        }, time).call(function () {
-            // animateState.descrease();
-            Game2048.self.addNewGrids(1);
-        }, this);
-    };
-    GridItem.prototype.change = function (delay, numInfo, animateState) {
-        var _this = this;
-        animateState.increase();
-        var that = this;
-        egret.Tween.get(this).wait(delay).call(function () {
-            _this.numTxt.text = "" + numInfo.num;
-            _this.numTxt.size = numInfo.fontSize;
-            _this.numTxt.textColor = numInfo.color;
-            _this.grid.fillColor = numInfo.backgroundColor;
-            animateState.descrease();
-        }, this);
-    };
-    GridItem.prototype.moveToAndFadeOut = function (deltaX, deltaY, time, animateState) {
-        animateState.increase();
-        var that = this;
-        egret.Tween.get(this).to({
-            x: this.x + deltaX,
-            y: this.y + deltaY
-        }, time).to({ alpha: 1 }, 250).call(function () {
-            animateState.descrease();
-        }, this);
-    };
     return GridItem;
 }(eui.Component));
 __reflect(GridItem.prototype, "GridItem");
-// class GridItem extends eui.ItemRenderer {
-//     public grid: eui.Rect;
-//     public numTxt: eui.Label;
-//     public constructor(data) {
-//         super();
-//         this.skinName = "GameGridItem";
-//         this.touchEnabled = false;//不能点击
-//     }
-//     public dataChanged(): void {
-//         let data: any = Util.numStyle[this.data];
-//         this.grid.fillColor = data.bg;
-//         if (this.data > 0) {
-//             this.numTxt.visible = true;
-//             this.numTxt.text = data.num + "";
-//             this.numTxt.size = data.size;
-//             this.numTxt.textColor = data.color;
-//         } else {
-//             this.numTxt.visible = false;
-//         }
-//     }
-// } 
 //# sourceMappingURL=GridItem.js.map

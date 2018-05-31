@@ -52,7 +52,7 @@ class LoadingUI extends egret.Sprite {
         let e: number = 0.1;
         for (let i = 0; i < 10; i++) {
             let s: egret.Shape = new egret.Shape;
-            s.graphics.beginFill(0xffffff, e);
+            s.graphics.beginFill(0x7c736a, e);
             s.graphics.drawCircle(0, 0, 10);
             s.graphics.endFill();
             s.anchorOffsetX = -60;
