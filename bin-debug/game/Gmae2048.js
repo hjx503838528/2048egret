@@ -257,10 +257,11 @@ var Game2048 = (function (_super) {
                             _this.running -= 1;
                             curItem.setData(Util.numStyle[value_1]);
                             _this.removeFromParent(nextItem_1);
-                            if (value_1 >= 16) {
+                            /**小弹幕 */
+                            if (value_1 >= 2048) {
                                 var lable_1 = Util.createLable("\u606D\u559C\u8FBE\u5230" + value_1 + "!", 0, 500, 40, 640, 0xf57c5f, "center");
                                 _this.addChild(lable_1);
-                                egret.Tween.get(lable_1).to({ y: 400 }, 1000).call(function () {
+                                egret.Tween.get(lable_1).to({ y: 400 }, 1200).call(function () {
                                     _this.removeFromParent(lable_1);
                                 }, _this);
                             }
@@ -277,15 +278,6 @@ var Game2048 = (function (_super) {
                                 _this.addNewGrids(1);
                                 var num = _this.record;
                                 _this.record = 0;
-                                // let label: eui.Label = new eui.Label();
-                                // label.text = `+${num}`;
-                                // label.x = 360;
-                                // label.y = 100;
-                                // label.width = 120;
-                                // label.bold = true;
-                                // label.size = 30;
-                                // label.textColor = 0x7c736a;
-                                // label.textAlign = "center";
                                 var label = Util.createLable("+" + num, 360, 100, 30, 120, 0x7c736a, "center");
                                 _this.addChild(label);
                                 egret.Tween.get(label).to({ y: 50 }, 300).to({ alpha: 0 }, 200).call(function (label) {
@@ -296,15 +288,6 @@ var Game2048 = (function (_super) {
                                     _this._best = _this._grade;
                                     var num_1 = _this.bestRecord;
                                     _this.bestRecord = 0;
-                                    // let bestLabel: eui.Label = new eui.Label();
-                                    // bestLabel.text = `+${num}`;
-                                    // bestLabel.x = 490;
-                                    // bestLabel.y = 100;
-                                    // bestLabel.size = 30;
-                                    // bestLabel.width = 120;
-                                    // bestLabel.bold = true;
-                                    // bestLabel.textColor = 0xf59563;
-                                    // bestLabel.textAlign = "center";
                                     var bestLabel = Util.createLable("+" + num_1, 490, 100, 30, 120, 0xf59563, "center");
                                     _this.addChild(bestLabel);
                                     egret.Tween.get(bestLabel).to({ y: 50 }, 300).to({ alpha: 0 }, 200).call(function (label) {
