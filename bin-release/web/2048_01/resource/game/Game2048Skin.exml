@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="Game2048Skin" width="640" height="1136" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing">
+	<e:Rect width="100%" height="100%" fillColor="0xf8f8ec"  x="0"/>
+	<e:Group width="640" height="1136" y="0" horizontalCenter="0">
+		<e:Label text="2048" textColor="0x7c736a" textAlign="center" verticalAlign="middle" size="100" bold="true" x="20" y="30" scaleX="1" scaleY="1"/>
+		<e:Label text="Play 2048 Game Online" textColor="0x776e65" textAlign="center" verticalAlign="middle" size="22" bold="true" x="25" y="140"/>
+		<e:Label text="Hjx" textColor="0xf2b179" textAlign="center" verticalAlign="middle" size="100" bold="true" italic="true" horizontalCenter="0" bottom="100"/>
+		<e:Label text="Join the numbers and get to the 2048 tile!" textColor="0x776e65" textAlign="center" verticalAlign="middle" size="22" x="25" y="170" bold="true"/>
+		<e:Button id="newBtn" label="新游戏" y="140" skinName="GameBtnSkin" width="140" height="60" right="30"/>
+		<e:Group y="35" right="30">
+			<e:Rect width="120" height="70" fillColor="0xbbada0" scaleX="1" scaleY="1" ellipseWidth="15"/>
+			<e:Rect width="120" height="70" fillColor="0xbbada0" scaleX="1" scaleY="1" x="130"/>
+			<e:Label text="分数" y="5" size="26" x="34" textColor="0xeee4da" bold="true"/>
+			<e:Label id="scoreTxt" size="28" textAlign="center" bold="true" verticalAlign="middle" textColor="0xffffff" text="0" x="0" width="120" height="30" y="36"/>
+			<e:Label text="最佳" y="5" size="26" x="164" textColor="0xeee4da" bold="true"/>
+			<e:Label id="bestTxt" size="28" textAlign="center" bold="true" verticalAlign="middle" textColor="0xffffff" text="0" x="130" width="120" height="30" y="36"/>
+		</e:Group>
+		<e:Group id="contentCon" width="600" height="600" y="230" horizontalCenter="0" touchChildren="false">
+			<e:Rect id="gridBg" width="600" height="600" x="0" y="0" fillColor="0xb8af9e" ellipseWidth="50"/>
+			<e:List id="kongList" width="560" height="560" horizontalCenter="0" itemRendererSkinName="GameGridItem" verticalCenter="0" visible="false">
+			<e:ArrayCollection>
+				<e:Array>
+				<e:Object/>
+				<e:Object/>
+				<e:Object/>
+				<e:Object/>
+				<e:Object/>
+				<e:Object/>
+				<e:Object/>
+				<e:Object/>
+				<e:Object/>
+				<e:Object/>
+				<e:Object/>
+				<e:Object/>
+				<e:Object/>
+				<e:Object/>
+				<e:Object/>
+				<e:Object/>
+				</e:Array>
+			</e:ArrayCollection>
+			<e:layout>
+				<e:TileLayout horizontalGap="20" verticalGap="20"/>
+			</e:layout>
+			</e:List>
+			<e:List id="gridList" width="560" height="560" horizontalCenter="0" itemRendererSkinName="GameGridItem" verticalCenter="0" visible="false">
+			<e:ArrayCollection>
+				<e:Array>
+				<e:Object/>
+				<e:Object/>
+				<e:Object/>
+				<e:Object/>
+				<e:Object/>
+				<e:Object/>
+				<e:Object/>
+				<e:Object/>
+				<e:Object/>
+				<e:Object/>
+				<e:Object/>
+				<e:Object/>
+				<e:Object/>
+				<e:Object/>
+				<e:Object/>
+				<e:Object/>
+				</e:Array>
+			</e:ArrayCollection>
+			<e:layout>
+				<e:TileLayout horizontalGap="20" verticalGap="20"/>
+			</e:layout>
+			</e:List>
+		</e:Group>
+	</e:Group>
+	<e:Group id="gameOver" width="640" height="1136" y="0" x="0" visible="false">
+		<e:Rect fillColor="0xe0e0e0" fillAlpha="0.9" enabled="true" ellipseWidth="32" ellipseHeight="32" left="0" top="0"
+		         width="100%" height="100%"/>
+		<e:Label text="游戏结束" anchorOffsetX="0" anchorOffsetY="0" height="60" left="0" textAlign="center"
+		         verticalAlign="middle" bold="true" size="50" textColor="0xff3600" width="100%"  y="310"/>
+		<e:Label id="gradeTxt" anchorOffsetX="0" anchorOffsetY="0" height="60" left="0" right="0" size="40"
+		         textAlign="center" bold="true" verticalAlign="middle" textColor="0x727272" text="分数:2048"  y="390"/>
+		<e:Label id="newGame" anchorOffsetX="0" anchorOffsetY="0" left="0" size="48" text="新游戏"
+		         textAlign="center" bold="true" verticalAlign="middle" textColor="0x288cff" height="60"  width="100%" y="470"/>
+	</e:Group>
+</e:Skin>
