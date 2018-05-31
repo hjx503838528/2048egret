@@ -1,0 +1,21 @@
+{
+	"initial": [
+		"libs/modules/egret/egret.js",
+		"libs/modules/egret/egret.web.js",
+		"libs/modules/eui/eui.js",
+		"libs/modules/res/res.js",
+		"libs/modules/tween/tween.js",
+		"libs/modules/game/game.js",
+		"promise/bin/promise.js"
+	],
+	"game": [
+		"bin-debug/AssetAdapter.js",
+		"bin-debug/LoadingUI.js",
+		"bin-debug/Main.js",
+		"bin-debug/ThemeAdapter.js",
+		"bin-debug/game/Gmae2048.js",
+		"bin-debug/game/GridData.js",
+		"bin-debug/game/GridItem.js",
+		"bin-debug/game/Util.js"
+	]
+}
