@@ -134,6 +134,7 @@ class Game2048 extends eui.Component {
                 this.items[i][j] = data;
             }
         }
+
         /**开始添加2个随机格子 */
         this.addNewGrids(2);
 
@@ -270,6 +271,15 @@ class Game2048 extends eui.Component {
                                 this.running -= 1;
                                 curItem.setData(Util.numStyle[value]);
                                 this.removeFromParent(nextItem);
+                                /**小弹幕 */
+                                if (value >= 2048) {
+                                    let lable: eui.Label = Util.createLable(`恭喜达到${value}!`, 0, 500, 40, 640, 0xf57c5f, "center");
+                                    this.addChild(lable)
+                                    egret.Tween.get(lable).to({ y: 400 }, 1200).call(() => {
+                                        this.removeFromParent(lable);
+                                    }, this);
+                                }
+
                                 /**分数显示 */
                                 this.record += value;
                                 this._grade += value;
@@ -283,15 +293,7 @@ class Game2048 extends eui.Component {
                                     this.addNewGrids(1);
                                     let num: number = this.record;
                                     this.record = 0;
-                                    let label: eui.Label = new eui.Label();
-                                    label.text = `+${num}`;
-                                    label.x = 360;
-                                    label.y = 100;
-                                    label.width = 100;
-                                    label.bold = true;
-                                    label.size = 30;
-                                    label.textColor = 0x7c736a;
-                                    label.textAlign = "center";
+                                    let label: eui.Label = Util.createLable(`+${num}`, 360, 100, 30, 120, 0x7c736a, "center");
                                     this.addChild(label);
                                     egret.Tween.get(label).to({ y: 50 }, 300).to({ alpha: 0 }, 200).call((label) => {
                                         this.scoreTxt.text = `${this._grade}`;
@@ -301,15 +303,7 @@ class Game2048 extends eui.Component {
                                         this._best = this._grade;
                                         let num: number = this.bestRecord;
                                         this.bestRecord = 0;
-                                        let bestLabel: eui.Label = new eui.Label();
-                                        bestLabel.text = `+${num}`;
-                                        bestLabel.x = 490;
-                                        bestLabel.y = 100;
-                                        bestLabel.size = 30;
-                                        bestLabel.width = 120;
-                                        bestLabel.bold = true;
-                                        bestLabel.textColor = 0xf59563;
-                                        bestLabel.textAlign = "center";
+                                        let bestLabel: eui.Label = Util.createLable(`+${num}`, 490, 100, 30, 120, 0xf59563, "center");
                                         this.addChild(bestLabel);
                                         egret.Tween.get(bestLabel).to({ y: 50 }, 300).to({ alpha: 0 }, 200).call((label) => {
                                             this.bestTxt.text = `${this._best}`;

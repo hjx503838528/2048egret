@@ -26,6 +26,18 @@ var Util = (function () {
         rect.ellipseHeight = radius;
         return rect;
     };
+    Util.createLable = function (text, x, y, size, w, color, textAlign) {
+        var label = new eui.Label();
+        label.text = "" + text;
+        label.x = x;
+        label.y = y;
+        label.width = w;
+        label.bold = true;
+        label.size = size;
+        label.textColor = color;
+        label.textAlign = textAlign;
+        return label;
+    };
     /**颜色 */
     Util.numStyle = {
         "0": { "num": 0, "color": 0x7c736a, "bg": 0xcdc1b4, "size": 65 },
@@ -42,7 +54,7 @@ var Util = (function () {
         "2048": { "num": 2048, "color": 0xfff7eb, "bg": 0xeec22e, "size": 50 },
         "4096": { "num": 4096, "color": 0xfff7eb, "bg": 0x3d3a33, "size": 50 },
         "8192": { "num": 8192, "color": 0xfff7eb, "bg": 0x0c0b0a, "size": 50 },
-        "16384": { "num": 16384, "color": 0xfff7eb, "bg": 0x0c0b0a, "size": 40 },
+        "16384": { "num": 16384, "color": 0xfff7eb, "bg": 0x0fbcbc, "size": 40 },
     };
     return Util;
 }());
