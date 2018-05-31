@@ -286,7 +286,7 @@ class Game2048 extends eui.Component {
                                     let label: eui.Label = new eui.Label();
                                     label.text = `+${num}`;
                                     label.x = 360;
-                                    label.y = 140;
+                                    label.y = 100;
                                     label.width = 100;
                                     label.bold = true;
                                     label.size = 30;
